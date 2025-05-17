@@ -1,0 +1,40 @@
+RULES: NLP Tabanlı Siber Zorbalık Tespit Modeli Geliştirme Rehberi
+1. Problem Tanımı
+Kullanıcıdan alınan metinleri analiz ederek siber zorbalık içerip içermediğini ve içeriyorsa hangi kategoriye ait olduğunu sınıflandıran bir model geliştirilecektir. Model çok sınıflı bir metin sınıflandırma problemi çözecektir.
+
+2. Veri İşleme
+Ham metin verisi temizlenecek, normalleştirilecek ve etiketleri kontrol edilecektir. Temizlik adımları arasında küçük harfe çevirme, noktalama işaretlerinin kaldırılması, gereksiz boşlukların silinmesi ve stopword temizliği yer alacaktır. Veriler eğitim, doğrulama ve test setlerine uygun oranlarda bölünecektir.
+
+3. Model Seçimi
+Transformer tabanlı önceden eğitilmiş bir dil modeli kullanılacaktır. Model, sınıflandırma görevine göre yeniden yapılandırılacak ve son katmanına sınıf sayısı kadar çıkış nöronu eklenecektir. Hafif ve verimli modeller tercih edilecektir.
+
+4. Eğitim Stratejisi
+Model GPU üzerinde eğitilecek, uygun optimizer ve kayıp fonksiyonu seçilecektir. Erken durdurma, öğrenme oranı planlaması ve karma hassasiyet eğitimi gibi teknikler uygulanacaktır. Eğitim sırasında doğrulama seti ile performans izlenecektir.
+
+5. Değerlendirme Kriterleri
+Modelin başarımı doğruluk, kesinlik, geri çağırma ve F1 skoru gibi metriklerle değerlendirilecektir. Ayrıca sınıflar arası dengesizlik göz önünde bulundurulacaktır. Test seti ile nihai değerlendirme yapılacaktır.
+
+6. Hiperparametre Ayarları
+Hiperparametreler yapılandırma dosyalarında tanımlanacak ve deneyler bu dosyalar aracılığıyla yönetilecektir. Öğrenme oranı, batch boyutu, epoch sayısı ve model türü gibi parametreler deney takibiyle belgelenecektir.
+
+7. Model Kaydetme ve Yükleme
+Eğitilen modelin ağırlıkları ve konfigürasyonları düzenli olarak kaydedilecek, model tekrar kullanılmak istendiğinde bu kayıtlar yüklenecektir. Versiyonlama ile farklı modeller karşılaştırılabilir hale getirilecektir.
+
+8. Web Arayüzü Entegrasyonu
+Model, kullanıcıların metin girerek sonuç alabileceği etkileşimli bir arayüzle sunulacaktır. Arayüz basit, hızlı ve kullanıcı dostu olacak; tüm girişler doğrulanarak hatalar önlenecektir.
+
+9. Hata Yönetimi
+Veri yükleme, model tahmini ve kullanıcı girdileri gibi kritik işlemlerde hata kontrolleri yapılacak ve sistem kararlı hale getirilecektir. Eğitim sırasında anormallikler için izleme ve uyarı mekanizmaları kurulacaktır.
+
+10. Performans ve Optimizasyon
+Gerekli durumlarda çoklu GPU desteği, gradient biriktirme ve mixed precision kullanımı ile sistem performansı artırılacaktır. Veri ön işleme ve eğitim süreci profillenerek darboğazlar tespit edilecektir.
+
+11. Deney Takibi
+Eğitim süreci boyunca kayıplar, metrikler ve görseller deney takip araçlarıyla kaydedilecektir. Deney sonuçları karşılaştırılarak en iyi model belirlenecektir.
+
+12. Proje Yapılandırması
+Kod, veri ve modeller modüler yapıda düzenlenecek ve klasör yapısı iyi tanımlanacaktır. Model, veri işleme, eğitim ve arayüz bileşenleri birbirinden ayrılarak sürdürülebilirlik sağlanacaktır.
+13-Fast apısı yerine flask apısı kullanılacaktır.
+14-Bert,gpt,gibi modeller yerine tamamen özgün yeni bir model kullanılacaktır.
+15-Confusion Matrix ve modelin ağırlıkları Kaydedilecektir.
+16-Gereksiz kod tekrarı yapılmayacaktır.
